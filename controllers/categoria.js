@@ -23,8 +23,8 @@ const getCategoria = async (req = request, res = response) => {
 const postCategoria = async (req = request, res = response) => {
 
     //Desestructuración
-    const { tipo, precio, cantidad } = req.body;
-    const categoriaGuardadoDB = new Categoria({ tipo, precio, cantidad });
+    const { nombre, descripcion } = req.body;
+    const categoriaGuardadoDB = new Categoria({ nombre, descripcion });
 
     //Guardar en BD
     await categoriaGuardadoDB.save();
@@ -41,7 +41,7 @@ const putCategoria = async (req = request, res = response) => {
 
     //Req.params sirve para traer parametros de las rutas
     const { id } = req.params;
-    const { _id, img, ...resto } = req.body;
+    const { _id, img, estado, ...resto } = req.body;
     //Los parametros img, rol, estado y google no se modifican, el resto de valores si (nombre, correo y password)
 
     //Editar al usuario por el id

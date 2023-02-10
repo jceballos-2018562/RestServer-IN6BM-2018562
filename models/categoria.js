@@ -1,17 +1,17 @@
 const { Schema, model } = require('mongoose');
 
 const CategoriaSchema = Schema({
-    tipo: {
+    nombre: {
         type: String,
-        required: [true, 'El tipo es obligatorio']
+        required: [true, 'El nombre es obligatorio']
     },
-    precio: {
+    descripcion: {
         type: String,
-        required: [true, 'El precio es obligatorio' ]
+        required: [true, 'La descripcion es obligatoria' ]
     },
-    cantidad: {
-        type: String,
-        required: [true, 'La cantidad es obligatorio' ]
+    estado: {
+        type: Boolean,
+        default: true
     },
     img: {
         type: String
